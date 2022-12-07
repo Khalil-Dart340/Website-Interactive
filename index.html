@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Khalil's Top Three</title>
+        <meta charset="utf-8">
+        <style>
+            #container {
+                background-color: #f4143c;
+                color: #ffffff;
+                width: 50%;
+                height: 85%;
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-83%, -50%);
+                padding: 20px;
+                overflow:inherit;
+                border: solid white 2px;
+            }
+            #LeftTitle{
+                color: #251473;
+                width: 34.80%;
+                height: 85%;
+                position:absolute;
+                top:50%;
+                right:-9%;
+                transform: translate(-44.1%, -50%);
+                overflow: hidden;
+                padding: -10px;
+                font-size: 80px;
+                font-family:sans-serif;
+            }
+            
+            #bgcolor {
+                background-color: #f2abbe;
+                --447bbe
+            }
+            #MovieDetails {
+                color: #544c94;
+                font-size: 24px;
+                transform: translateY(-30px);
+            }
+            
+            #picture1 {
+                transform: scale(85%);
+            }
+            
+            #picture2 {
+                transform: scale(85%);
+            }
+            
+            #picture3 {
+                transform: scale(85%);
+            } 
+            
+            #picture1W {}
+            #picture2W {}
+            #picture3W {} 
+            
+            #Rmovietitle {
+                text-decoration: none;
+                font-size: 24px;
+                float: right;
+                color: #447bbe;
+                text-emphasis: bold;
+                padding: 8px;
+            }
+            
+            {box-sizing:border-box}
+
+            .slideshow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: auto;
+            }
+
+            .mySlides {
+                display: ;
+            }
+
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                margin-top: -22px;
+                padding: 16px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            .prev:hover, .next:hover {
+                background-color: rgba(0,0,0,0.8);
+            }
+
+            .text {
+                color: #f2f2f2;
+                font-size: 15px;
+                padding: 8px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .numbertext {
+                color: #f2f2f2;
+                font-size: 12px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+            }
+
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+
+            .active, .dot:hover {
+                background-color: #717171;
+            }
+
+
+            .fade {
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+
+            @keyframes fade {
+                from {opacity: .4} 
+                to {opacity: 1}
+            }
+ 
+        </style>
+    </head>
+    <body id ="bgcolor">
+        
+        <button id="Rmovietitle">Next Movie</button>
+                            
+        <div id = "container">
+            <h1>Bitten by a radioactive spider in the subway, Brooklyn teenager Miles Morales suddenly develops mysterious powers that transform him into the one and only Spider-Man. When he meets Peter Parker, he soon realizes that there are many others who share his special, high-flying talents. Miles must now use his newfound skills to battle the evil Kingpin, a hulking madman who can open portals to other universes and pull different versions of Spider-Man into our world.</h1>
+            
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="rise.jpeg" style="width:100%" id="picture1">
+                    <div class="text" id="picture1W">Miles Rises</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="cast.jpeg" style="width:100%" id="picture2" >
+                    <div class="text" id="picture2W">Spider-People</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="street.jpeg" style="width:100%" id="picture3">
+                    <div class="text" id="picture3W">In action </div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        <br>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+
+        </div>
+        
+       <div id = "LeftTitle">
+           <h3>Spider-Man: Into the Spider-Verse</h3>
+           <h2 id= "MovieDetails">Rated: PG , Genre: Family/Action , Run Time: 1H 56m , Released: 2018</h2>
+           
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        
+        <script>
+        
+            let slideIndex = 1;
+                showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1} 
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none"; 
+                }
+                
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+                slides[slideIndex-1].style.display = "block"; 
+                dots[slideIndex-1].className += " active";
+            }
+            
+            let scene2 = function(){
+                $("h1").text("A year after a severe emotional trauma, Sarah goes to North Carolina to spend some time exploring caves with her friends; after descending underground, the women find strange cave paintings and evidence of an earlier expedition, then learn they are not alone: Underground predators inhabit the crevasses, and they have a taste for human flesh.");
+                $("h3").text("The Descent");
+                $("h2").text("Rated: R , Genre: Horror/Thriller , Run Time: 1H 39m , Released: 2005")
+                
+                $("#bgcolor").css("background-color", "#331b03");
+                $("#container").css("background-color", "rgba(239, 218, 202, 0.69)");
+                $("#container").css("border", "solid #efdaca 2px");
+                $("h3").css("color", "#c11212");
+                $("h2").css("color", "rgba(222, 44, 44, 0.59)");
+                $("h1").css("color", "#575757");
+                
+                $("#picture1").attr("src", "hole.jpeg");
+                $("#picture2").attr("src", "bllod.jpeg");
+                $("#picture3").attr("src", "fight.jpeg");
+                $("#picture1W").text("Descending the Pit");
+                $("#picture2W").text("Swimming through Blood");
+                $("#picture3W").text("Ready to Fight");
+                
+                $("button").on("click", scene3);
+                }
+            
+            let scene3 = function(){
+                $("h1").text("A tale of two legendary revolutionaries and their journey far away from home. After their journey they return home to start fighting back against British colonialists in the 1920s.");
+                $("h3").text("RRR");
+                $("h2").text("Rated: PG-13 , Genre: Action/Drama , Run Time: 3H 7m , Released: 2022")
+                $("#bgcolor").css("background-color", "#f4da71");
+                $("#container").css("background-color", "#d36e22");
+                $("#container").css("border", "solid #fce8e8 2px");
+                $("h3").css("color", "#158638");
+                $("h2").css("color", "rgb(20, 108, 44)");
+                $("h1").css("color", "#ffc400")
+                
+                $("#picture1").attr("src", "bros2.jpeg");
+                $("#picture2").attr("src", "damn.jpeg");
+                $("#picture3").attr("src", "bros.jpeg");
+                $("#picture1W").text("Brothers in Arms");
+                $("#picture2W").text("Raid on the Capital");
+                $("#picture3W").text("Fighting Against the Suppressors");
+                
+                $("button").text("Restart")
+                $("button").on("click",  function reloadPage(){
+                    location.reload(true);
+                } );
+                }
+        
+            $("button").on("click", scene2);
+        </script>
+        
+        
+        
+        
+        
+    </body>
+
+
+
+
+
+
+</html>
